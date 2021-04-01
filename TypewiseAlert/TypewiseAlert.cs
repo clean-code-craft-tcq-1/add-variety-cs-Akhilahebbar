@@ -19,17 +19,14 @@ namespace TypewiseAlert
 
         }
 
-        public static BreachType InferBreachLevel(double value, double lowerLimit, double upperLimit)
+         public static BreachType InferBreachLevel(double value, double lowerLimit, double upperLimit)
         {
-            if (value < lowerLimit)
-            {
-                return BreachType.TOO_LOW;
-            }
-            if (value > upperLimit)
-            {
-                return BreachType.TOO_HIGH;
-            }
-            return BreachType.NORMAL;
+           return (value >= lowerLimit && value <= upperLimit)?BreachType.NORMAL: CheckBreachLow(value, lowerLimit, upperLimit);
+        }
+        public static BreachType CheckBreachLow(double value, double lowerLimit,double upperLimit)
+        {
+            return value < lowerLimit ? BreachType.TOO_LOW : BreachType.TOO_HIGH;
+         
         }
     }
 }

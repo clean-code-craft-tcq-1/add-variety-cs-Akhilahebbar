@@ -6,8 +6,8 @@ namespace TypewiseAlert
 {
     public interface ICoolingType
     {
-        int LowerLimit { get; }
+        int LimitLow { get; }
 
-        int UpperLimit { get; }
+        int LimitHigh { get; }
     }
 }

@@ -15,7 +15,7 @@ namespace TypewiseAlert
         public static BreachType ClassifyTemperatureBreach(CoolingType coolingType, double tempVal)
         {
             ICoolingType cooling = InstanceFactory.GetInstance(coolingType.ToString()) as ICoolingType;
-            return InferBreachLevel(tempVal, cooling.LowerLimit, cooling.UpperLimit);
+            return InferBreachLevel(tempVal, cooling.LimitLow, cooling.LimitHigh);
 
         }
 

@@ -1,19 +1,21 @@
-﻿namespace TypewiseAlert
+namespace TypewiseAlert
 {
+   
+    class ActiveMedCooling : ICoolingType
+    {
+        public int LimitLow { get { return 0; } }
+        public int LimitHigh { get { return 40; } }
+    }
     class ActivePassiveCooling : ICoolingType
     {
-        public int LowerLimit { get { return 0; } }
-        public int UpperLimit { get { return 35; } }
+        public int LimitLow { get { return 0; } }
+        public int LimitHigh { get { return 35; } }
     }
     class ActiveHiCooling : ICoolingType
     {
-        public int LowerLimit { get { return 0; } }
-        public int UpperLimit { get { return 45; } }
+        public int LimitLow { get { return 0; } }
+        public int LimitHigh { get { return 45; } }
     }
-    class ActiveMedCooling : ICoolingType
-    {
-        public int LowerLimit { get { return 0; } }
-        public int UpperLimit { get { return 40; } }
-    }
-  
+
+
 }

@@ -13,7 +13,7 @@ namespace TypewiseAlert.Test
             TypewiseAlert alert = new TypewiseAlert("FakeAlert");
             alert.CheckAndAlert(test, 24);
             FakeAlert notify = alert._alerter as FakeAlert;
-            Assert.True(notify.ExecutedAtLeastOnce);
+            Assert.True(notify.IsExecuted);
         }
         [Fact]
         public void TestInferBreachAsHigh()

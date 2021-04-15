@@ -25,4 +25,8 @@ Depending on the type of instance created alert will trigger after temperature c
 
 Test cases created for all the functions implemented in TypewiseAlert.
 
+## Fake alert created for behavioural testing
+
+Created parameterised constructor to test the behavior of void return type method.
+
 

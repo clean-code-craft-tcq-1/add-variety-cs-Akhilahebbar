@@ -1,10 +1,20 @@
 using System;
 using Xunit;
+using static TypewiseAlert.Constants;
 
 namespace TypewiseAlert.Test
 {
     public class TypewiseAlertTest
     {
+        [Fact]
+        public void FakeAlertTest()
+        {
+            var test = new BatteryCharacter(Constants.CoolingType.ActivePassiveCooling, "test");
+            TypewiseAlert alert = new TypewiseAlert("FakeAlert");
+            alert.CheckAndAlert(test, 24);
+            FakeAlert notify = alert._alerter as FakeAlert;
+            Assert.True(notify.ExecutedAtLeastOnce);
+        }
         [Fact]
         public void TestInferBreachAsHigh()
         {
@@ -37,9 +47,8 @@ namespace TypewiseAlert.Test
         {
             Assert.True(TypewiseAlert.ClassifyTemperatureBreach(Constants.CoolingType.ActivePassiveCooling, -45) == Constants.BreachType.TOO_LOW);
         }
-       
-
       
-          
+
+
     }
 }
